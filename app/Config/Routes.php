@@ -31,6 +31,45 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/', 'Home::index');
 
+
+// User Controller
+
+$routes->get('/user', 'UserController::index');
+$routes->get('/user/create', 'UserController::create');
+
+
+// Program Controller
+
+$routes->get('/program', 'ProgramController::index');
+$routes->get('/program/create', 'ProgramController::create');
+$routes->get('/program/edit/(:any)', 'ProgramController::edit/$1');
+$routes->post('/program/update/(:any)', 'ProgramController::update/$1');
+$routes->post('/program/store', 'ProgramController::store');
+$routes->get('/program/delete/(:num)', 'ProgramController::destroy/$1');
+
+
+
+// Contact Controller
+
+$routes->get('/contact', 'ContactController::index');
+$routes->get('/contact/create', 'ContactController::create');
+$routes->get('/contact/edit/{id}', 'ContactController::edit');
+$routes->post('/contact', 'ContactController::store');
+$routes->delete('/contact', 'ContactController::delete');
+
+
+// Contact Controller
+
+$routes->get('/contact-group', 'ContactGroupController::index');
+$routes->get('/contact-group/create', 'ContactGroupController::create');
+$routes->get('/contact-group/edit/{id}', 'ContactGroupController::edit');
+$routes->post('/cont-groupact', 'ContactGroupController::store');
+$routes->delete('/contact-group', 'ContactGroupController::delete');
+
+
+
+
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
